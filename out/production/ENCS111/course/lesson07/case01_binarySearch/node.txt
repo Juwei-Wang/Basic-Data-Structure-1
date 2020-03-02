@@ -1,0 +1,104 @@
+1   2   6   7   10  28  79  102
+            ^
+6
+
+1   2   6 ? 6
+    ^
+
+6 ? 6
+^
+
+
+mid = arr[midIndex]
+mid ? query
+
+mid > query
+mid = query
+mid < query
+
+
+binarySearch(arr, query)
+
+
+base case 分析
+
+public static boolean binarySearch(int[] arr, int i, int j, int query) {
+    if (i == j) {
+        return false;
+    }
+
+    int midIndex = (i + j) / 2;
+    int mid = arr[midIndex];
+
+    if (mid < query) {
+        return binarySearch(arr, mid + 1, j, query); // 右边
+    } else if (mid > query) {
+        return binarySearch(arr, i, mid, query); // 左边
+    } else {
+        return true;
+    }
+}
+
+[0, 4)
+    mi = 2
+    a b c d
+        ^
+
+    [3, 4)  ? 只剩一个选项了
+        mi = 3
+        _ _ _ d
+              ^
+        [4, 4)  没有值
+        [3, 3)  没有值
+    [0, 2)  还有2个值
+        mi = 1
+        a b _ _
+          ^
+        [2, 2) 没有值
+        [0, 1) 只剩下 1 个值
+            mi = 0
+            a
+            ^
+            [1, 1)  没有值
+            [0, 0)  没有值
+
+[0, 3]
+    mi = 1
+    [0, 1) 只剩下 1 个值
+        [0, 0)  没有值
+        [1, 1) 没有值
+    [2, 3) 只剩下 1 个值
+        [2, 2)  没有值
+        [3, 3) 没有值
+
+
+[0, 2]
+[0, 1]
+
+
+
+public static boolean binarySearch(int[] arr, int i, int j, int query) {
+    if (i == j) {
+        return false;
+    }
+
+    int midIndex = (i + j) / 2;
+    int mid = arr[midIndex];
+
+    if (mid < query) {
+        return binarySearch(arr, mid + 1, j, query); // 右边
+    } else if (mid > query) {
+        return binarySearch(arr, i, mid, query); // 左边
+    } else {
+        return true;
+    }
+}
+
+
+T(n) = c1 + T(n/2)
+     = c2
+
+     = c1 + c1 + T(n/4)
+     = c1 + c1 + c1 + T(n/8)
+     = c1 + ... + c1 + c2;
+     = O(logn)

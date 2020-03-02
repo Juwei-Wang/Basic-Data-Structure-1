@@ -1,0 +1,103 @@
+6 7 3 8 4 0 9 2 1 5
+p
+  i
+  j
+
+j > p
+j++
+
+6 7 3 8 4 0 9 2 1 5
+p
+  i
+    j
+
+j < p
+
+6 3 7 8 4 0 9 2 1 5
+p
+    i
+      j
+
+6 3 7 8 4 0 9 2 1 5
+p
+    i
+        j
+
+6 3 4 8 7 0 9 2 1 5
+p
+      i
+          j
+
+6 3 4 0 7 8 9 2 1 5
+p
+        i
+            j
+
+6 3 4 0 7 8 9 2 1 5
+p
+        i
+              j
+p               = 6
+[p + 1, i)      < 6
+[i, j)          > 6
+[j, ~           ? 6
+
+
+6 3 4 0 2 8 9 7 1 5
+p
+          i
+                j
+
+6 3 4 0 2 1 9 7 8 5
+p
+            i
+                  j
+
+6 3 4 0 2 1 5 7 8 9
+p
+              i
+                    j
+
+swap(i - 1, p)
+
+5 3 4 0 2 1 6 7 8 9
+p
+              i
+                    j
+
+return i - 1;
+
+时间复杂度分析
+T_quickselect(n) = T_partition(n) + T_quickselect(?) + c
+
+
+T_partition(n) = O(n)
+
+T_quickselect(n) = O(n) + T_quickselect(?) + c      // 继续递归
+                 = O(n) + c                         // pivotIndex = k
+
+
+T_quickselect(n) = O(n) + T_quickselect(n/2) + c      // 继续递归
+T_quickselect(n) = O(n) + T_quickselect(n - 1) + c      // 继续递归
+
+
+T(n) = O(n) + T(n/2)
+     = cn + T(n/2)
+     = cn + c(n/2) + c(n/4) + c(n/8) + .... + c_2
+     = 2cn + c_2
+     = O(n)
+
+
+T(n) = O(n) + T(n - 1) + c      // 继续递归
+T(n) = cn + T(n - 1)    // 继续递归
+T(n) = cn + c(n - 1) + c(n - 2) + c(n - 3) ..... c(1)   // 继续递归
+     = O(n^2)
+
+
+5-Row ..... QuickSelect
+
+
+
+
+
+

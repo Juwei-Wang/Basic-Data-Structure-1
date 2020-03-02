@@ -1,0 +1,8 @@
+[]
++   LinkedList
+    +   Entry
+        +   key: T
+        +   value: V
+
+
+LinkedList<Entry<String, String>>[]

@@ -1,0 +1,16 @@
+public static void quickSort(int[] arr, int i, int j, int k) {
+    if (i == j) {
+        return;
+    }
+    int pivotIndex = partition(arr);
+    quickSort(arr, pivotIndex + 1, j, k);
+    quickSort(arr, i, pivotIndex, k);
+}
+
+T(n) = cn + T(?) + T(?)
+     = cn + T(n/2) + T(n/2)
+     = cn + T(n - 1) + T(1)
+
+T(n) = cn + 2 x T(n/2) =  O(nlogn)
+     = cn + T(n - 1) =    O(n^2)
+

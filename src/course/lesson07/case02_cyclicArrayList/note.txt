@@ -1,0 +1,43 @@
+source      start   end
+_ _ _ _     0       0
+
+size() {
+    return end - start;
+}
+
+add(6)
+6 _ _ _     0       1
+
+add(7)
+6 7 _ _     0       2
+
+add(8)
+6 7 8 _     0       3
+
+removeLast()
+6 7 _ _     0       2
+
+add(8)
+6 7 8 _     0       3
+
+removeFirst()
+_ 7 8 _     1       3
+
+add(8)
+_ 7 8 8     1       0
+
+add(2)
+2 7 8 8     1       1
+
+add(3)
+_ 7 8 8 2 _ _ _
+
+
+add(2)
+2 7 8 8     1       1
+
+2 _ _ 8     3       1
+
+2 _ _ _     0       1
+
+

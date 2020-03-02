@@ -1,0 +1,72 @@
+重点思考
+当你 拿到 两个 一半的 答案，能不能 得到 整体的答案
+
+举例
+最大值
+那你拿到 两个 一半数据 的 最大值，能不能求出 整体的 最大值
+
+
+排序
+当你拿到 两个 一半 已排序序列，能否 求出 整体 排序序列
+
+merge sort
+
+parition
+    以 mid 点 进行 partition O(1)
+
+solve O(1)
+    如果 要排序的序列只有一个数，那么我已经排序好了
+
+merge
+>    2 5 7 9    queue
+>    1 3 4 6    queue
+queue
+
+>    2 5 7 9    queue
+>    3 4 6    queue
+queue 1
+
+>    5 7 9    queue
+>    3 4 6    queue
+queue 1 2
+
+>    5 7 9    queue
+>    4 6    queue
+queue 1 2 3
+
+>    5 7 9    queue
+>    6    queue
+queue 1 2 3 4
+
+>    7 9    queue
+>    6    queue
+queue 1 2 3 4 5
+
+>    7 9    queue
+>       queue
+queue 1 2 3 4 5 6
+
+>       queue
+>       queue
+queue 1 2 3 4 5 6 7 9
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

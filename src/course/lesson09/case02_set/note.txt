@@ -1,0 +1,39 @@
+
+笔记：
+不能 get 某一个
+
+只能 get 所有，进行遍历
+或者 contains 检查 某一个
+
+
+List 实现 Set
+
+set.contains(e)
+    list.contains(e)    O(n)
+
+set.add(e)
+    contains(e) ?       O(n)
+    no -> list.add(e)   O(1)
+
+? 课后作业
+如果 list 是 arraylist，
+且，arraylist 内部是排好序的
+那么 contains 是否 可以从 O(n) 降低？
+以及 add 后，为了维持有序，需要将元素 加在哪里？
+如果加在这个位置，保持有序 时间复杂度 是多少？
+整体 add 的时间复杂度是多少？
+
+
+使用 Hash 实现 Set
+set.contains(e)
+    hash::contains(e)    O(1)
+
+set.add(e)
+    hash::add(e) ?       O(1)
+
+
+
+
+
+
+

@@ -1,0 +1,69 @@
+ACTGGGTAC   n
+   AGTTAC   m
+        ^
+        |
+
+case 1: equals
+ACTGGGTAC   n
+   AGTTAC   m
+         \- 1 + S(n - 1, m - 1)  -/
+
+case 2: not equals
+ACTGGG   n
+   AGT   m                           max
+       \--  drop n => S(n - 1, m) --/
+        \-  drop m => S(n, m - 1) -/
+
+
+base case
+n | m = 0
+
+
+ACTGCG   n
+   AAT   m
+
+    ACTGC    n - 1
+       AAT   m
+
+       ACTG     n - 2
+          AAT   m
+
+       ACTGC    n - 1
+          AA    m - 1
+
+    ACTGCG   n
+       AA    m - 1
+
+        ACTGC    n - 1
+           AA    m - 1
+
+        ACTGCG   n
+           A     m - 2
+
+1. Map, Key ->
+
+public class Situation {
+    public int n;
+    public int m;
+
+    // generate code -> hash code , equals
+}
+
+Map<Situation, Integer>
+
+
+2. excel
+    int[][] matrix   = new int[n][m]
+
+O(nm)
+
+O(n + m) -> O(max(n, m))
+
+
+
+
+
+
+
+
+
